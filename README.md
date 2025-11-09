@@ -225,5 +225,57 @@ sequenceDiagram
   FE-->>U: Refresca listado
 
  ````
+# Script de base de datos
+````
+-- ============================================================
+-- 📚 Books Management System - Base de datos inicial
+-- Autor: Camilo García
+-- Fecha: 2025-11-09
+-- Motor: Microsoft SQL Server
+-- ============================================================
+
+-- 1️⃣ Crear base de datos
+CREATE DATABASE booksdb;
+GO
+
+USE booksdb;
+GO
+
+-- 2️⃣ Crear tabla de usuarios
+CREATE TABLE [dbo].[users] (
+    [id] INT IDENTITY(1,1) PRIMARY KEY,
+    [email] NVARCHAR(100) NOT NULL UNIQUE,
+    [passwordHash] NVARCHAR(255) NOT NULL,
+    [role] NVARCHAR(50) NOT NULL DEFAULT('user'),
+    [createdAt] DATETIME NOT NULL DEFAULT(GETDATE())
+);
+GO
+
+-- 3️⃣ Crear tabla de libros
+CREATE TABLE [dbo].[books] (
+    [id] INT IDENTITY(1,1) PRIMARY KEY,
+    [title] NVARCHAR(200) NOT NULL,
+    [author] NVARCHAR(150) NOT NULL,
+    [year] INT NOT NULL,
+    [status] NVARCHAR(50) NOT NULL DEFAULT('available'),
+    [createdAt] DATETIME NOT NULL DEFAULT(GETDATE())
+);
+GO
+
+-- 4️⃣ Insertar usuario administrador por defecto
+-- (Contraseña: admin123 — recuerda reemplazar por hash real si usas bcrypt)
+INSERT INTO [dbo].[users] ([email], [passwordHash], [role])
+VALUES ('admin@example.com', '$2b$10$ABCDEFGHijklmnopqrstuv1234567890abcdefghij', 'admin');
+GO
+
+-- 5️⃣ Datos iniciales opcionales
+INSERT INTO [dbo].[books] ([title], [author], [year], [status])
+VALUES 
+('El Quijote', 'Miguel de Cervantes', 1605, 'available'),
+('Cien años de soledad', 'Gabriel García Márquez', 1967, 'reserved'),
+('Rayuela', 'Julio Cortázar', 1963, 'available');
+GO
+
+````
 
 
