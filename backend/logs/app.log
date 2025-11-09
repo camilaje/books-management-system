@@ -1,0 +1,34 @@
+[2025-11-09 01:52:05] INFO - Nuevo usuario registrado: admin2@yopmail.com
+[2025-11-09 03:27:16] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 03:27:35] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 03:35:10] INFO - Libro eliminado (ID: 1)
+[2025-11-09 03:46:01] INFO - Libro creado: "libro2" por autor2
+[2025-11-09 03:46:20] INFO - Libro actualizado (ID: 3)
+[2025-11-09 13:58:05] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 13:58:32] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 13:58:42] INFO - Libro eliminado (ID: 4)
+[2025-11-09 14:00:38] INFO - Libro creado: "Libro de paula" por Paula
+[2025-11-09 14:17:04] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 14:17:18] INFO - Libro eliminado (ID: 5)
+[2025-11-09 14:56:04] INFO - Libro creado: "test" por test
+[2025-11-09 14:56:07] INFO - Libro eliminado (ID: 6)
+[2025-11-09 14:56:56] INFO - Libro creado: "test" por test
+[2025-11-09 14:57:01] INFO - Libro actualizado (ID: 7)
+[2025-11-09 14:57:04] INFO - Libro eliminado (ID: 7)
+[2025-11-09 14:58:50] INFO - Libro creado: "test" por test
+[2025-11-09 15:23:33] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 15:28:31] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 15:28:35] INFO - Libro eliminado (ID: 8)
+[2025-11-09 15:28:54] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 15:30:04] INFO - Usuario autenticado: admin@yopmail.com
+[2025-11-09 15:39:20] INFO - Libro creado: "e" por e
+[2025-11-09 15:39:24] INFO - Libro creado: "w" por w
+[2025-11-09 15:39:27] INFO - Libro creado: "w" por w
+[2025-11-09 15:39:33] INFO - Libro creado: "r" por r
+[2025-11-09 15:39:35] INFO - Libro eliminado (ID: 10)
+[2025-11-09 15:39:40] INFO - Libro creado: "7" por 7
+[2025-11-09 15:39:42] INFO - Libro creado: "8" por 8
+[2025-11-09 15:39:45] INFO - Libro creado: "9" por 9
+[2025-11-09 15:39:58] INFO - Libro creado: "0" por 0
+[2025-11-09 15:40:01] INFO - Libro creado: "h" por h
+[2025-11-09 15:40:04] INFO - Libro creado: "l" por l

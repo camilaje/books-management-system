@@ -1,0 +1,87 @@
+.nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    font-weight: 700;
+    color: #111827;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__link {
+    color: #374151;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    &.is-active,
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__user-email {
+    color: #374151;
+    font-size: 14px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+
+    &--primary {
+      background: #2563eb;
+      color: #fff;
+      &:hover {
+        background: #1d4ed8;
+      }
+    }
+    &--danger {
+      background: #ef4444;
+      color: #fff;
+      &:hover {
+        background: #dc2626;
+      }
+    }
+  }
+}

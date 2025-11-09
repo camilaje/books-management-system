@@ -1,0 +1,15 @@
+<header class="nav">
+    <div class="nav__inner">
+        <a class="nav__brand" routerLink="/books">📚 Cursos & Libros</a>
+        <div class="nav__right">
+            @if (auth.isAuthenticated()) {
+            <div class="nav__user">
+                <span class="nav__user-email">{{ auth.user()?.email || 'Usuario' }}</span>
+                <button class="nav__btn nav__btn--danger" (click)="logout()">Cerrar sesión</button>
+            </div>
+            } @else {
+            <a class="nav__btn nav__btn--primary" routerLink="/login">Iniciar sesión</a>
+            }
+        </div>
+    </div>
+</header>

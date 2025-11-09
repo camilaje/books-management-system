@@ -1,0 +1,40 @@
+<div class="book-form">
+  <div class="book-form__card">
+    <h2 class="book-form__title">
+      {{ isEdit ? 'Editar Libro' : 'Registrar Libro' }}
+    </h2>
+
+    <form class="book-form__form" [formGroup]="form" (ngSubmit)="submit()">
+      <label class="book-form__label" for="title">Título</label>
+      <input class="book-form__input" id="title" formControlName="title" type="text" placeholder="Nombre" />
+      @if (form.controls.title.touched && form.controls.title.invalid) {
+      <div class="book-form__error">El título es obligatorio.</div>
+      }
+
+      <label class="book-form__label" for="author">Autor</label>
+      <input class="book-form__input" id="author" formControlName="author" type="text" placeholder="Autor" />
+      @if (form.controls.author.touched && form.controls.author.invalid) {
+      <div class="book-form__error">El autor es obligatorio.</div>
+      }
+
+      <label class="book-form__label" for="year">Año de publicación</label>
+      <input class="book-form__input" id="year" formControlName="year" type="number" placeholder="Año" />
+
+      <label class="book-form__label" for="status">Estado</label>
+      <select class="book-form__select" id="status" formControlName="status">
+        <option value="disponible">Disponible</option>
+        <option value="reservado">Reservado</option>
+      </select>
+
+      <div class="book-form__buttons">
+        <button class="book-form__button" type="submit" [disabled]="loading || form.invalid">
+          @if (loading) { Guardando... } @else { {{ isEdit ? 'Actualizar' : 'Registrar' }} }
+        </button>
+
+        <button class="book-form__button book-form__button--cancel" type="button" (click)="cancel()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="books">
+    <div class="books__header">
+        <h2 class="books__title">📚 Lista de Libros</h2>
+        <div class="books__actions">
+            <button class="books__btn books__btn--primary" (click)="newBook()">➕ Nuevo Libro</button>
+            <button class="books__btn books__btn--ghost" (click)="loadBooks()" [disabled]="loading">⟳ Recargar</button>
+        </div>
+    </div>
+
+    <div class="books__filters">
+        <input class="books__input" placeholder="Buscar por título o autor" [(ngModel)]="q" (keyup.enter)="search()" />
+
+        <select class="books__select" [(ngModel)]="status" (change)="search()">
+            <option value="">Todos</option>
+            <option value="disponible">Disponible</option>
+            <option value="reservado">Reservado</option>
+        </select>
+
+        <select class="books__select" [(ngModel)]="limit" (change)="changeLimit(limit)">
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="10">10</option>
+            <option [ngValue]="20">20</option>
+            <option [ngValue]="50">50</option>
+        </select>
+    </div>
+
+    @if (loading) {
+    <div class="books__loading">Cargando...</div>
+    } @else {
+    @if (books.length) {
+    <div class="books__table-wrap">
+        <table class="books__table" aria-label="Tabla de libros">
+            <thead class="books__thead">
+                <tr class="books__row books__row--head">
+                    <th class="books__th" (click)="sortBy('title')">Título</th>
+                    <th class="books__th" (click)="sortBy('author')">Autor</th>
+                    <th class="books__th" (click)="sortBy('year')">Año</th>
+                    <th class="books__th" (click)="sortBy('status')">Estado</th>
+                    <th class="books__th books__th--actions">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="books__tbody">
+                @for (book of books; track $index) {
+                <tr class="books__row">
+                    <td class="books__td">{{ book.title }}</td>
+                    <td class="books__td">{{ book.author }}</td>
+                    <td class="books__td">{{ book.year }}</td>
+                    <td class="books__td">{{ book.status }}</td>
+                    <td class="books__td books__td--actions">
+                        <button class="books__btn books__btn--small" (click)="editBook(book.id!)">✏️ Editar</button>
+                        <button class="books__btn books__btn--danger books__btn--small"
+                            (click)="deleteBook(book.id!)">🗑️ Eliminar</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="books__pagination">
+        <button class="books__btn" (click)="prevPage()" [disabled]="page === 1">Anterior</button>
+        <span class="books__page-info">Página {{ page }} / {{ pages }} — {{ total }} resultados</span>
+        <button class="books__btn" (click)="nextPage()" [disabled]="page >= pages">Siguiente</button>
+    </div>
+    } @else {
+    <div class="books__empty">No hay libros registrados.</div>
+    }
+    }
+</div>
