@@ -45,7 +45,7 @@ JWT_SECRET=supersecret
 LOG_LEVEL=info
 ````
 
-> Asegúrate de que tu instancia de SQL Server esté accesible con esas credenciales y que la base de datos booksdb exista (o configura TypeORM para crearla o migrarla automáticamente).
+> Asegúrate de que tu instancia de SQL Server esté accesible con esas credenciales y que la base de datos booksdb exista 
 
 #### 2.3 Variables de entorno (Frontend)
 
@@ -277,5 +277,6 @@ VALUES
 GO
 
 ````
+
 
 
